@@ -7,16 +7,24 @@ import org.junit.jupiter.api.Test;
 
 class MyClassTest {
 
+	MyClass myClassTester;
+	
+	@BeforeEach
+	void initMyClass() {
+		myClassTester = new MyClass();
+	}
+	
+	
 	@Test
     void testExceptionIsThrown() {
-        MyClass tester = new MyClass();
-        assertThrows(IllegalArgumentException.class, () -> tester.multiply(5000, 5));
+          
+        assertThrows(IllegalArgumentException.class, () -> myClassTester.multiply(5000, 5));
     }
 
     @Test
     void testMultiply() {
-        MyClass tester = new MyClass();
-        assertEquals(50, tester.multiply(10, 5), "10 x 5 must be 50");
+        
+        assertEquals(50, myClassTester.multiply(10, 5), "10 x 5 must be 50");
     }
 
 }
