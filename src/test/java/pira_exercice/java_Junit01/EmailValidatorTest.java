@@ -55,7 +55,10 @@ class EmailValidatorTest {
     @Test
     public void emailValidator_InvalidEmailNoUsername_ReturnsFalse() {
     	//given
-    	String invalidEmailDo ="example.com";
+    	String InvalidEmailNoUsername ="@example.com";
+    	
+    	assertFalse(EmailValidator.isValidEmail(InvalidEmailNoUsername));
+    	
     }
 
     @Test
