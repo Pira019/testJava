@@ -28,32 +28,50 @@ class EmailValidatorTest {
 
     @Test
     public void emailValidator_CorrectEmailSubDomain_ReturnsTrue() {
-        fail("Fixme");
+    	
+    	//given
+    	String email ="sam@learn.mailgun.com";
+    	
+        assertTrue(EmailValidator.isValidEmail(email));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoTld_ReturnsFalse() {
-        fail("Fixme");
+
+    	//given
+    	String invalidEmail ="example.com";
+    	
+    	assertFalse(EmailValidator.isValidEmail(invalidEmail));
     }
 
     @Test
     public void emailValidator_InvalidEmailDoubleDot_ReturnsFalse() {
-        fail("Fixme");
+    	//given
+    	String invalidEmailDoubleDot ="example@gmail..com";
+    	
+    	assertFalse(EmailValidator.isValidEmail(invalidEmailDoubleDot));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoUsername_ReturnsFalse() {
-        fail("Fixme");
+    	//given
+    	String invalidEmailDo ="example.com";
     }
 
     @Test
     public void emailValidator_EmptyString_ReturnsFalse() {
-        fail("Fixme");
+    	//given
+    	String EmptyString ="";
+    	
+    	assertFalse(EmailValidator.isValidEmail(EmptyString));
+    	
+    	
     }
 
     @Test
     public void emailValidator_NullEmail_ReturnsFalse() {
-        fail("Fixme");
+    	 
+       assertFalse(EmailValidator.isValidEmail(""));
     }
 
 }
