@@ -3,6 +3,7 @@ package pira_exercice.java_Junit01;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -95,7 +96,9 @@ class DataServiceTest {
 
         
         // TODO test that at least one ring bearer is part of the fellowship
-
+        
+         
+        
       
     }
 
@@ -128,6 +131,8 @@ class DataServiceTest {
         fail("not yet implemented");
 
         // HINT fellowship.stream might be useful here
+        
+        
     }
 
     @Test
@@ -137,7 +142,8 @@ class DataServiceTest {
 
         // TODO Write a test to get the 20 element from the fellowship throws an
         // IndexOutOfBoundsException
-        fail("not yet implemented");
+        
+        assertThrows(IndexOutOfBoundsException.class, () -> fellowship.get(20));
     }
 
 }
