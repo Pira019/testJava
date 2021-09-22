@@ -9,12 +9,11 @@ public enum Race {
 	DWARF("Dwarf", false, Aligment.GOOD),
 	ORC("Orc", false, Aligment.EVIL);
 	
+	
 	private final String name;
 	private final boolean immortal;
 	private Aligment aligment;
-	
-	
-	
+	 
 	
 	/**
 	 * @param name
