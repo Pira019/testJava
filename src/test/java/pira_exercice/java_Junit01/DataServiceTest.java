@@ -2,6 +2,7 @@ package pira_exercice.java_Junit01;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
@@ -182,6 +183,15 @@ class DataServiceTest {
         // IndexOutOfBoundsException
         
         assertThrows(IndexOutOfBoundsException.class, () -> fellowship.get(20));
+    }
+    
+    
+   
+    
+    @Test
+    void ensureThatTestDoesnotRunMoreThe3s() {
+    	
+    	assertTimeout(Duration.ofSeconds(3), ()-> dataService.update());
     }
 
 }

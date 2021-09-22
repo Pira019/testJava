@@ -88,4 +88,13 @@ public class DataService {
 	    }
 	    
 	    
+	    public   boolean update() {
+	        try {
+	            Thread.sleep(2000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+	        return true;
+	    }
+	    
 }
