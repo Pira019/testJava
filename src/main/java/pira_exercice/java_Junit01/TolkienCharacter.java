@@ -28,7 +28,7 @@ public class TolkienCharacter {
 
 	public void setAge(int age) {
 		if(age <0) {
-			throw new IllegalArgumentException("Age is not allowed to be smaller");
+			throw new IllegalArgumentException("Age is not allowed to be smaller than zero");
 		}
 		this.age = age;
 	}

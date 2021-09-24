@@ -1,6 +1,7 @@
 package pira_exercice.java_Junit01;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public class DataModelAssertThrowsTest {
 	        DataService dataService = new DataService();
 	        List<TolkienCharacter> fellowship = dataService.getFellowship();
 	        Throwable exception = assertThrows(IndexOutOfBoundsException.class, () -> fellowship.get(20));
-	        assertEquals("Index 20 out of bounds for length 9", exception.getMessage());
+	        assertNotEquals("Index 20 out of bounds for length 9", exception.getMessage());
 	    }
 
 	    @Test
@@ -29,7 +30,7 @@ public class DataModelAssertThrowsTest {
 	        
 	        
 	        Throwable execeptionAge = assertThrows(IllegalArgumentException.class, () -> frodo.setAge(-1));
-	        assertEquals("Age is not allowed to be smaller", execeptionAge.getMessage());
+	        assertEquals("Age is not allowed to be smaller than zero", execeptionAge.getMessage());
 
 	    }
 
@@ -44,7 +45,7 @@ public class DataModelAssertThrowsTest {
 	        
 	        IllegalArgumentException execeptionAge = assertThrows(IllegalArgumentException.class, () -> new TolkienCharacter("Frodo", -1, Race.HOBBIT));
 	        
-	        assertEquals("Age is not allowed to be smaller", execeptionAge.getMessage());
+	        assertEquals("Age is not allowed to be smaller than zero", execeptionAge.getMessage());
 
 	    }
 
