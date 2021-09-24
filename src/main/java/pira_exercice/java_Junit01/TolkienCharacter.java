@@ -16,8 +16,9 @@ public class TolkienCharacter {
 	 */
 	public TolkienCharacter( String name,int age, Race race) {
 		super();
-		this.age = age;
+	//	this.age = age;
 		this.name = name;
+		setAge(age);
 		this.race = race;
 	}
 
